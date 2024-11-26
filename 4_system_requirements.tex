@@ -1,0 +1,498 @@
+\renewcommand{\tabcolsep}{6pt}
+\singlespacing
+
+\subsection{SABR Requirements}
+
+% ----- SABR REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{\linewidth}{
+        |>{\hsize=0.100\linewidth}>{\centering\arraybackslash}X
+        |>{\hsize=0.150\linewidth}>{\centering\arraybackslash}X
+        |>{\hsize=0.400\linewidth}>{\centering\arraybackslash}X
+        |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+        |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+    }
+        \hline
+        \textbf{ID} & \textbf{NAME} & \textbf{Description} & \textbf{Requirement Type} & \textbf{Verification Method} \\ \hline
+
+        SABR-1 & Thrust & SABR shall produce measurable thrust. & Functional & Test \\ \hline
+        
+        SABR-2 & Detonation & SABR shall demonstrate capability of detonation. & Functional & Test \\ \hline
+
+        SABR-3 & Oxidizer & SABR should operate using atmospheric air composition (79\% N$_2$, 21\% O$_2$). & Functional & Test \\ \hline
+
+        SABR-4 & System Scale & SABR shall scale its components and perform metrics to a small scale compared to current operational systems. & Performance & Analysis \\ \hline
+
+        SABR-5 & Reusability & SABR should not sustain extensive damage for the duration of engine burn. & Sustainability & Demonstration \\ \hline
+
+        SABR-6 & System Interface & SABR shall interface with the equipment provided by PERL. & Interface & Inspection \\ \hline
+
+        SABR-7 & Operational Verification & SABR shall be static fire tested at a regime of propellant and dilutant conditions to build an operational map of the RDE. & Verification & Demonstration \\ \hline
+
+        SABR-8 & System Cost & SABR should not exceed a cost of \$1,000. & Cost & Inspection \\ \hline
+
+    \end{tabularx}
+    \caption{SABR Requirements}
+    \label{tab:sabr_requirements}
+\end{table}
+
+\subsection{RDE Requirements}
+
+% ----- RDE FUNCTIONAL REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \caption{RDE System Requirements}
+    \label{tab:rde_requirements}
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-RDE-1 & Ignition & SABR-RDE shall employ a means for detonation ignition. & Inspection \\ \hline
+        
+            SABR-RDE-2 & Injection & SABR-RDE shall inject propellants at a specified mass flow rate. & Analysis \\ \hline
+        
+            SABR-RDE-3 & Flow Stabilization & SABR-RDE shall stabilize flow conditions received from SABR-TS. & Analysis \\ \hline
+        
+            SABR-RDE-4 & Thrust Structure & SABR-RDE shall withstand thrust generated. & Demonstration \\ \hline
+        
+            SABR-RDE-5 & Active Cooling	& SABR-RDE may use regenerative cooling to extend operation time. & Analysis \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{RDE System Functional Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- RDE PERFORMANCE REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-RDE-6 & Startup Time & SABR-RDE should transition the combustion mode to detonation within ten (10) milliseconds of ignition. & Test \\ \hline
+
+            SABR-RDE-7 & Material Selection & SABR-RDE shall be manufactured out of materials that withstand operating conditions. & Analysis \\ \hline
+
+            SABR-RDE-8 & Mass Flow & SABR-RDE should inject propellants at a combined mass flow of at least 50 g/s. & Analysis \\ \hline
+
+            SABR-RDE-9 & Thrust & SABR-RDE should produce measurable thrust in the range of 75 – 250 N. & Test \\ \hline
+
+            SABR-RDE-10 & Propellants & SABR-RDE should perform reliably while approaching atmospheric air as an oxidizer (79\% N$_2$ - 21\% O$_2$). & Test \\ \hline
+            
+            SABR-RDE-11 & Operational Time & SABR-RDE should run in detonation mode for at least 0.25 seconds. & Test \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{RDE System Performance Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- RDE INTERFACE REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-RDE-12 & Propellant Interface & SABR-RDE shall receive propellants delivered from SABR-TS. & Demonstration \\ \hline
+    
+            SABR-RDE-13 & Structural Interface & SABR-RDE shall transfer thrust to the test stand's structure. & Analysis \\ \hline
+            
+            SABR-RDE-14 & Data Acquisition Interface & SABR-RDE shall include necessary sensor ports for integration with data acquisition. & Demonstration \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{RDE System Interface Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- RDE VERIFICATION REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-RDE-15 & Interface Verification & SABR-RDE shall undergo interface verification of its components and subassemblies. & Inspection \\ \hline
+
+            SABR-RDE-16 & Functional Verification & SABR-RDE shall undergo functional verification of its components and subassemblies. & Demonstration \\ \hline
+            
+            SABR-RDE-17 & Performance Verification & SABR-RDE shall undergo performance verification of its components and subassemblies. & Test \\ \hline
+            
+            SABR-RDE-18 & Manufacturability Verification & SABR-RDE shall undergo manufacturability verification of its components and subassemblies. & Analysis/Test \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{RDE System Verification Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- RDE OTHER REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-RDE-19 & Operational Safety & SABR-RDE shall not introduce significant risk to the test operators or the testing environment. & Inspection \\ \hline
+    
+            SABR-RDE-20 & Manufacturability & SABR-RDE shall be designed to maximize the manufacturing capabilities available to the team. & Demonstration \\ \hline
+            
+            SABR-RDE-21 & Sustainability & SABR-RDE shall be sustainable in a manner that is convenient to service and build upon. & Analysis \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{RDE System Other Requirements}
+    \end{subtable}
+\end{table}
+
+\subsection{Test Stand Requirements}
+
+% ----- TEST STAND FUNCTIONAL REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Test Stand System Requirements}
+    \label{tab:ts_requirements}
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-TS-1 & Imaging Diagnostics & SABR-TS should collect imaging diagnostics at a point downstream of the exhaust to validate the presence of detonations & Demonstration \\ \hline
+    
+            SABR-TS-2 & Pressure Diagnostics & SABR-TS shall collect pressure diagnostics at various points throughout the system & Demonstration \\ \hline
+            
+            SABR-TS-3 & Temperature Diagnostics & SABR-TS shall collect temperature diagnostics at various points throughout the system & Demonstration \\ \hline
+            
+            SABR-TS-4 & Load Cell Diagnostics & SABR-TS should measure applied loads with an accuracy of ±3\% & Demonstration \\ \hline
+            
+            SABR-TS-5 & Structural limits & SABR-TS shall withstand all applied force and vibrational forces in a static loading case. & Analysis \\ \hline
+            
+            SABR-TS-6 & Sustainability & SABR-TS shall be sustainable in a manner that is convenient to service and build upon. & Analysis \\ \hline
+            
+            SABR-TS-7 & Engine Support & SABR-TS-STR shall provide mounting and support for the engine. & Demonstration \\ \hline
+            
+            SABR-TS-8 & Fluid System Support & SABR-TS-STR shall provide mounting and support for the fluid system. & Demonstration \\ \hline
+            
+            SABR-TS-9 & Electronics Support & SABR-TS-STR shall provide mounting and support for the electronics. & Demonstration \\ \hline
+            
+            SABR-TS-10 & Transportable & SABR-TS-STR shall be transportable. & Demonstration \\ \hline
+            
+            SABR-TS-11 & Loads & SABR-TS-STR shall be able to withstand all loads. & Demonstration \\ \hline
+            
+            SABR-TS-12 & Loads on Fluid System & SABR-TS-STR shall be able to reduce structural loads on the Fluid System. & Analysis \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Test Stand System Functional Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- TEST STAND PERFORMANCE REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-TS-13 & Thrust measurements & SABR-TS thrust plate assembly shall be able to measure applied loads up to 5 kN with a resolution of 0.5 N. & Analysis \\ \hline
+    
+            SABR-TS-14 & Form Factor & SABR-TS components should fit within a standard-size SUV trunk volume. & Inspection \\ \hline
+
+            SABR-TS-15 & Manufacturability & SABR-TS structural components shall consist of widely available metal extrusions. & Inspection \\ \hline
+
+            SABR-TS-16 & Weight & SABR-TS-STR shall be able to support a weight of 250 N. & Analysis \\ \hline
+            
+            SABR-TS-17 & Thrust Loads & SABR-TS-STR shall maintain a minimum factor of safety of five (5) at all times. & Analysis \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Test Stand System Performance Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- TEST STAND INTERFACE REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-TS-18 & Combustor Interface & SABR-TS shall physically interface with the combustor via the thrust plate. & Inspection \\ \hline
+
+            SABR-TS-19 & Feed System Interface & SABR-TS shall supply structural support and relevant physical interfaces to feed system outlets. & Inspection \\ \hline
+
+            SABR-TS-20 & DAQ Interface & SABR-TS shall provide the necessary electrical power and data transmission capabilities to all sensors within the system domain. & Inspection \\ \hline
+
+            SABR-TS-21 & Lab Interface & SABR-TS shall be physically secured within the allocated lab space at PERL. & Inspection \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Test Stand System Interface Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- TEST STAND OTHER REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-TS-22 & Control System Complexity  & SABR-TS control system shall be easily operable and free from unnecessary complexities  & Demonstration \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Test Stand System Other Requirements}
+    \end{subtable}
+\end{table}
+
+\subsection{Fluid System}
+
+% ----- FLUID SYSTEM FUNCTIONAL REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \caption{Fluid System Requirements}
+    \label{tab:fs_requirements}
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-FS-1 & Propellant Flow Rate Control & SABR-FS shall control flow rates for each propellant. & Test \\ \hline
+    
+            SABR-FS-2 & Oxidizer Composition Modulation & SABR-FS shall fine tune and vary the oxidizer mixture. & Test \\ \hline
+            
+            SABR-FS-3 & System Purging & SABR-FS shall be capable of purging all lines with an inert gas. & Demonstration \\ \hline
+            
+            SABR-FS-4 & SABR-RDE Propellant Supply & SABR-FS shall supply SABR-RDE with propellants. & Demonstration \\ \hline
+
+            SABR-FS-5 & SABR-TS Propellant Supply & SABR-FS shall supply SABR-TS with propellants. & Demonstration \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Fluid System Functional Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- FLUID SYSTEM PERFORMANCE REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-FS-6 & Oxidizer Supply & SABR-FS shall deliver oxidizer mass flow to combustor between 50-200 g/s. & Analysis \\ \hline
+
+            SABR-FS-7 & Fuel Supply & SABR-FS shall deliver fuel mass flow to combustor between 1-10 g/s. & Analysis \\ \hline
+
+            SABR-FS-8 & Structural Stability & SABR-FS shall be able to withstand nominal operating conditions. & Demonstration \\ \hline
+
+            SABR-FS-9 & SABR-RDE Propellant Mixture & SABR-FS shall provide SABR-RDE with a mixture of propellants in the equivalence ratio range of 0.8 to 1.2 and in the Nitrogen dilution range of 0\% to 79\%. & Test \\ \hline
+
+            SABR-FS-10 & SABR-TS Propellant Mixture	& SABR-FS shall provide SABR-RDE with a mixture of propellants in the equivalence ratio range of 0.8 to 1.2 and in the Nitrogen dilution range of 0\% to 79\%. & Test \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Fluid System Performance Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- FLUID SYSTEM INTERFACE REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-FS-11 & SABR-RDE Interface & SABR-FS shall integrate with SABR-RDE. & Inspection \\ \hline
+
+            SABR-FS-12 & SABR-TS Interface & SABR-FS shall integrate with SABR-TS. & Inspection \\ \hline
+
+            SABR-FS-13 & PERL Interface & SABR-FS shall integrate with the PERL systems. & Inspection \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Fluid System Interface Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- FLUID SYSTEM VERIFICATION REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-FS-14 & Cold Flow Verification & SABR-FS shall be cold flow tested at the nominal flow conditions. & Demonstration \\ \hline
+    
+            SABR-FS-15 & Integration Verification & SABR-FS shall undergo integration verification of its components and sub assemblies. & Inspection \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Fluid System Verification Requirements}
+    \end{subtable}
+\end{table}
+
+\vspace{-1em}
+
+% ----- FLUID SYSTEM OTHER REQUIREMENTS -----
+\begin{table}[H]
+    \centering
+    \small
+    \ContinuedFloat
+
+    \begin{subtable}[t]{\linewidth}
+        \begin{tabularx}{\linewidth}{
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.200\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.450\linewidth}>{\centering\arraybackslash}X
+            |>{\hsize=0.175\linewidth}>{\centering\arraybackslash}X|
+        }
+            \hline
+            \textbf{ID} & \textbf{Name} & \textbf{Description} & \textbf{Verification Method} \\ \hline
+        
+            SABR-FS-16 & Safing Procedure & SABR-FS shall shutdown or fail in a safe condition. & Demonstration \\ \hline
+
+        \end{tabularx}
+        \smallskip
+        \caption{Fluid System Other Requirements}
+    \end{subtable}
+\end{table}
+
+\doublespacing

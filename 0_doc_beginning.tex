@@ -1,0 +1,118 @@
+\begin{titlepage}
+
+    \centering
+    
+    \begin{minipage}{6.5in}
+        \centering
+        \raisebox{-0.5\height}{\includegraphics[width=0.12\textwidth]{ucf_pegasus_logo.png}}
+        \hspace{3em}
+        \raisebox{-0.5\height}{\includegraphics[width=0.75\textwidth]{ucf_bar_logo.png}}
+    \end{minipage}
+    \vspace{1em}
+    
+    \textbf{\Large Milestone 3: Concept Design Report}\par\vspace{4em}
+    
+    \textbf{RDE Senior Design Team 2024-2025}\par\vspace{0.5em}
+    Department of Mechanical and Aerospace Engineering\par\vspace{0.5em}
+    College of Engineering and Computer Science\par\vspace{3em}
+    
+    \textbf{Prepared By}\par\vspace{0.5em}
+    Paul Dehart, Joshua Kopp, Nathaniel Michnoff, Arturo Negrette, Hunter Quinlan, Egan Rigney, Subhan Wade, Edward Woodruff\par\vspace{3em}
+    
+    {\bfseries Faculty Advisor}\par\vspace{0.5em}
+    Taha Rezzag-Lebza\par\vspace{2em}
+    
+    \includegraphics[width=0.4\textwidth]{sabr_logo.png}\par\vspace{2em}
+    
+    \textit{Due: November 22, 2024}\par\vspace{1em}
+    \textit{EAS 4700C / EML 4501C}
+
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+
+\section*{Executive Summary}
+\doublespacing
+
+Rotating Detonation Engines (RDEs) are a novel method of combusting and accelerating gas for the purpose of rocket propulsion. The function remains similar to conventional rocket engines, as RDEs produce high temperature gas in a combustor that is then expelled through an exhaust wherein the mass flow momentum is used to push the rocket according to Newton’s Laws of Motion. The key difference between RDEs and conventional engines is that the flame front moves beyond the local speed of sound, in a mechanism referred to as “Pressure-Gain Combustion” (PGC). This method of combusting propellants allows for much higher specific impulse, which in turn allows for smaller engines and lower mass-flows to produce equivalent performance when compared to a conventional (constant pressure) engine. The critical aspect of an RDE that allows for this phenomenon to occur is the chamber geometry, ignition, and injector design.
+
+
+In context of this project, the overarching goal is to design, manufacture, and test fire an architecture capable of using atmospheric air as an oxidizer, and design with features that seek to integrate the system into a flight vehicle. RDEs are far more compact engines that have been shown through extensive research to have major potential as powerplants in hypersonic vehicles, guided munitions, and other compact, high-speed vehicles requiring a high payload to structure mass ratio. The project in its current standing is evaluating the minimum combustor size required to achieve stable detonation based on the propellants selected (Gaseous Hydrogen and Air at 79\% Nitrogen and 21\% Oxygen). Additionally, materials, seals, and injector designs are being selected to maximize efficiency, reduce risk of catastrophic damage to the combustor, and enable reusability of the system.
+
+\singlespacing
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+
+\section*{Terms and Abbreviations}
+
+\vspace{2em}
+\setlength{\tabcolsep}{2.5em}
+\begin{center}
+    \begin{tabular}{l l}
+        CEA & Chemical Equilibrium with Applications \\
+        CJ & Chapman-Jouget \\
+        CTE & Coefficient of Thermal Expansion \\
+        CV & Flow Coefficient \\
+        DAQ & Data Acquisition \\
+        DDT & Deflagration to Detonation \\
+        DFM & Design for Manufacturing \\
+        FEA & Finite Element Analysis \\
+        FMECA & Failure Modes and Effects Criticality Analysis (A.K.A. FMEA) \\
+        FOD & Foreign Object Debris \\
+        GH2 & Gaseous Hydrogen \\
+        GN2 & Gaseous Nitrogen \\
+        GOx & Gaseous Oxygen \\
+        GUI & Graphical User Interface \\
+        ID & Inner Diameter \\
+        IO & Input/Output \\
+        JAXA & Japanese Aerospace Exploration Agency \\
+        JIC & Jet-in-Crossflow \\
+        NASA & National Aeronautics and Space Administration \\
+        NI & National Instruments \\
+        NPT & National Pipe Thread \\
+        OD & Outer Diameter \\
+        ORB & O-Ring Boss \\
+        OS & Operating System \\
+        PERL & Propulsion and Energy Research Lab \\
+        PGC & Pressure Gain Combustion \\
+        PPE & Personal Protective Equipment \\
+        PRV & Pressure Relief Valve \\
+        PT & Pressure Transducer \\
+        RDE & Rotating Detonation Engine \\
+        RTD & Resistance Temperature Detector \\
+        RTV & Room-Temperature Vulcanizing \\
+        R\&D & Research and Development \\
+        SABR & Small-Scale Air-Breathing RDE \\
+        SS & Stainless Steel \\
+        TC & Thermocouple \\
+        UCF & University of Central Florida \\
+        U.S.A & United States of America \\
+        USB & Universal Serial Bus \\
+        ZND & Zeldovich Von Newmann D\"{o}hring \\
+    \end{tabular}
+\end{center}
+
+\newpage
+
+\section{Introduction}
+\doublespacing
+
+Rotating Detonation Engines were initially researched and developed in the 1950s and 60s with the infancy of large-scale rocket propulsion, but due to the lack of understanding of supersonic combustion and lack of high-speed imaging necessary to analyze and study a detonation wave, were mostly left untouched until the turn of the century. Organizations such as JAXA have developed full scale flight prototypes that have shown their potential in orbit, like other more conventional methods of rocket propulsion. However, there is a significant lack of development for RDE use in the atmosphere.
+
+Similarly to ramjets and scramjets, RDEs show promise in use for atmospheric vehicles that can benefit from a lightweight propulsion system that can remain efficient at hypersonic speeds. The motivation behind this project is to develop a system capable of operating in the atmosphere using hydrogen and air. The major problem that comes from running an RDE on atmospheric air composition as the oxidizer comes from the large amount of inert nitrogen being included in the reaction that acts as a heatsink and impedes the detonation to an extent. This project will be addressing this issue by experimenting and iterating through different nitrogen dilution percentages, starting from pure oxygen and arriving at effectively the same conditions seen in the atmosphere.
+
+This report will be focused on the starting parameters of the project, such as the requirements and needs to meet through the development of a combustor, test stand, and feed system capable of achieving the overall goals. Additionally, the existing technologies and the options available for certain components will be explored, leading to the preliminary analysis and modeling needed to set the parameters that will lead the rest of the design in the coming months, which will be outlined with a Gantt chart and further discussion in this report. As with any engineering design, the possible failure modes present with the approach taken will be discussed, and their criticality to the project will be analyzed. Finally, the future work necessary to further refine the design and overall project performance will be studied and possible recommendations for the rest of this track will be explored.
+
+\newpage
